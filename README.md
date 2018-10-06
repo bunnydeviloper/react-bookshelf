@@ -1,32 +1,31 @@
 # MyReads Project - React Bookshelf
 
-[**Project Rubic**](https://review.udacity.com/#!/rubrics/918/view)
-
+## Introduction
 * Starter template is forked from Udacity's FEND React Fundamentals course
+  * [**Project Rubic**](https://review.udacity.com/#!/rubrics/918/view)
   * Optional: start from scratch using [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project
 * **Goal**:
   * Add interactivity to the app by refactoring the static code
-  * Good React design practice is to create new JS files for each component
-  * Project code should handle state management appropriately
+  * Project code should handle state management appropriately (create new JS files for each component)
     * Component state is passed down from parent components to child components.
     * The state variable is not modified directly - setState() function is used correctly.
-    * Books have the same state on both the search page and the main application page:
-      * If a book is on a bookshelf, that is reflected in both locations.
+    * Books have the same state on both the search page and the main application page
   * Use import/require statements to include them where they are needed
   * Functionality comes first, then UI, responsive design, offline usage, etc...
-    * Code should format properly, run without errors, free of warnings (key, list items), follow engineering best practices
+    * Code should format properly, run without errors, free of warnings (key, list items)
+    * Code should follow engineering best practices
 * Final result screenshots:
-<img src="" />
-<img src="" />
+<img src="" alt="Pending Screenshot Image"/>
 
 ## Usage (run locally or add new features)
-1. Clone (or fork) the repository: `[sudo] git clone https://github.com/bunnydeviloper/FEND-arcade-game.git`
+1. Clone (or fork) the repository:
+    * `[sudo] git clone https://github.com/bunnydeviloper/FEND-arcade-game.git`
 2. To get started developing right away:
-  * `cd` into the app's directory
-  * Install all project dependencies with `npm install`
-  * Start the development server with `npm start`
+    * `cd` into the app's directory
+    * Install all project dependencies with `npm install`
+    * Start the development server with `npm start`
 3. Your browswer should automatically navigate to `localhost:3000`
-4. Back-end server is hosted automatically at `https://reactnd-books-api.udacity.com/` (more info below)
+4. Back-end server is hosted by Udacity at `https://reactnd-books-api.udacity.com/`
 
 ## Basic functionality
 ### Main Page
@@ -75,22 +74,18 @@
 ```
 
 ## Backend Server
-
 The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
 
-### `getAll()`
+#### `getAll()`
 * Returns a Promise which resolves to a JSON object containing a collection of book objects.
 * This collection represents the books currently in the bookshelves in your app.
 
-### `update(book, shelf)`
+#### `update(book, shelf)`
 * book: `<Object>` containing at minimum an `id` attribute
 * shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]
 * Returns a Promise which resolves to a JSON object containing the response data of the POST request
 
-### `search(query)`
+#### `search(query)`
 * query: `<String>`
 * Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
 * These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
@@ -104,4 +99,5 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 3. Commit your changes: `git commit -m "Add a new awesome feature"`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit and pull request.
+
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
