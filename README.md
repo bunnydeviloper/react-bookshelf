@@ -1,18 +1,27 @@
-# MyReads Project
+# MyReads Project - React Bookshelf
 
 [**Project Rubic**](https://review.udacity.com/#!/rubrics/918/view)
 
 * Starter template is forked from Udacity's FEND React Fundamentals course
-* Goal: add interactivity to the app by refactoring the static code and update React JS files.
+  * Optional: start from scratch using [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project
+* **Goal**: add interactivity to the app by refactoring the static code and update React JS files.
+  * Good React design practice is to create new JS files for each component
+  * Use import/require statements to include them where they are needed
+  * Functionality comes first, then UI, responsive design, offline usage...
+* Final result screenshots:
+<img />
+<img />
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
 
-## TL;DR
-
-To get started developing right away:
-
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+## Usage
+If you would like to run this application locally or add any new features to the game:
+1. Clone (or fork) the repository: `[sudo] git clone https://github.com/bunnydeviloper/FEND-arcade-game.git`
+2. To get started developing right away:
+  * `cd` into the app's directory
+  * Install all project dependencies with `npm install`
+  * Start the development server with `npm start`
+3. Your browswer should automatically navigate to `localhost:3000`
+4. Back-end server is hosted automatically at `https://reactnd-books-api.udacity.com/`
 
 ## What You're Getting
 ```bash
@@ -36,7 +45,6 @@ To get started developing right away:
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
 ```
 
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
 
 ## Backend Server
 
