@@ -13,7 +13,6 @@
 <img src="" />
 <img src="" />
 
-
 ## Usage (run locally or add new features)
 1. Clone (or fork) the repository: `[sudo] git clone https://github.com/bunnydeviloper/FEND-arcade-game.git`
 2. To get started developing right away:
@@ -22,6 +21,16 @@
   * Start the development server with `npm start`
 3. Your browswer should automatically navigate to `localhost:3000`
 4. Back-end server is hosted automatically at `https://reactnd-books-api.udacity.com/` (more info below)
+
+## Basic functionality
+### Main Page
+* Main page has 3 categories (or "bookshelves") for books (currently reading, want to read, and read)
+* Each book is shown on the correct shelf, along with its title and author(s)
+* User can move books between shelves (one book at a time) (bulk edit/move is optional feature)
+* New information should persist when page refreshed (offline usage is optional feature)
+
+### Search Page
+
 
 ## What You're Getting
 ```bash
@@ -70,4 +79,9 @@ The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will
 The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
 
 ## Contributing
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -m "Add a new awesome feature"`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit and pull request.
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
