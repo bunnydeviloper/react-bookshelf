@@ -40,6 +40,12 @@
 * If a book is assigned to a shelf on the main page and that book appears on the search page, the correct shelf should be selected on the search page. If that book's shelf is changed on the search page, that change should be reflected on the main page as well. The option "None" should be selected if a book has not been assigned to a shelf.
 * When an item is categorized on the search page and the user navigates to the main page, it appears on that shelf in the main page.
 
+### Routing
+* The main page contains a link to the search page.
+  * When the link is clicked, the search page is displayed and the URL in the browser’s address bar is `/search`.
+* The search page contains a link to the main page.
+  * When the link is clicked, the main page is displayed and the URL in the browser’s address bar is `/`.
+
 ## What You're Getting
 ```bash
 ├── CONTRIBUTING.md
