@@ -7,8 +7,14 @@
 * **Goal**:
   * Add interactivity to the app by refactoring the static code
   * Good React design practice is to create new JS files for each component
+  * Project code should handle state management appropriately
+    * Component state is passed down from parent components to child components.
+    * The state variable is not modified directly - setState() function is used correctly.
+    * Books have the same state on both the search page and the main application page:
+      * If a book is on a bookshelf, that is reflected in both locations.
   * Use import/require statements to include them where they are needed
   * Functionality comes first, then UI, responsive design, offline usage, etc...
+    * Code should format properly, run without errors, free of warnings (key, list items), follow engineering best practices
 * Final result screenshots:
 <img src="" />
 <img src="" />
