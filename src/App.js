@@ -44,6 +44,13 @@ class Search extends React.Component {
 }
 
 class DisplayBooks extends React.Component {
+  state = {
+    allbooks: {
+      currentlyReading: [],
+      wantToRead: [],
+      read: []
+    }
+  };
   render() {
     return (
       <div className="list-books">
@@ -56,6 +63,7 @@ class DisplayBooks extends React.Component {
               <h2 className="bookshelf-title">Currently Reading</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
+
                   <li>
                     <div className="book">
                       <div className="book-top">
@@ -66,6 +74,7 @@ class DisplayBooks extends React.Component {
                       <div className="book-authors">Harper Lee</div>
                     </div>
                   </li>
+
                   <li>
                     <div className="book">
                       <div className="book-top">
@@ -76,6 +85,7 @@ class DisplayBooks extends React.Component {
                       <div className="book-authors">Orson Scott Card</div>
                     </div>
                   </li>
+
                 </ol>
               </div>
             </div>
