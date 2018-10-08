@@ -1,5 +1,42 @@
 import React, { Component } from 'react';
 
+// stateless functional compoment
+function Categorize(updateStatus) {
+  console.log(updateStatus);
+  return (
+    <div className="book-shelf-changer">
+      <select>
+        <option value="move" disabled>Move to...</option>
+        <option onClick={() => updateStatus("Currently Reading")} value="currentlyReading">Currently Reading</option>
+        <option onClick={() => updateStatus("Want To Read")} value="wantToRead">Want to Read</option>
+        {/* <option onClick={alert('hi')} value="read">Read</option> */}
+        <option value="none">None</option>
+      </select>
+    </div>
+  );
+}
+
+class DisplayEach extends React.Component {
+  render() {
+    return (
+      <ol className="books-grid">
+        {this.props.allbooks.map(book => (
+          <li key={book.name}>
+            <div className="book">
+              <div className="book-top">
+                <div className="book-cover" style={{ width: 128, height: '100%', backgroundImage: `url(${book.cover})` }}></div>
+              <Categorize updateStatus={this.props.updateStatus} />
+              </div>
+              <div className="book-title">{book.title}</div>
+              <div className="book-authors">{book.author}</div>
+            </div>
+          </li>
+        ))}
+      </ol>
+    )
+  }
+}
+
 class DisplayAll extends React.Component {
   state = {
     allbooks: [
@@ -93,3 +130,5 @@ class DisplayAll extends React.Component {
     );
   }
 }
+
+export default DisplayAll;
