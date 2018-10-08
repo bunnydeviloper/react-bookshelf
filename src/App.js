@@ -4,22 +4,6 @@ import './App.css';
 import CreateBook from './CreateBook';
 import DisplayAll from './DisplayAll';
 
-// stateless functional compoment
-function Categorize(updateStatus) {
-  console.log(updateStatus);
-  return (
-    <div className="book-shelf-changer">
-      <select>
-        <option value="move" disabled>Move to...</option>
-        <option onClick={() => updateStatus("Currently Reading")} value="currentlyReading">Currently Reading</option>
-        <option onClick={() => updateStatus("Want To Read")} value="wantToRead">Want to Read</option>
-        <option onClick={alert('hi')} value="read">Read</option>
-        <option value="none">None</option>
-      </select>
-    </div>
-  );
-}
-
 class Search extends React.Component {
   render() {
     return (
@@ -45,28 +29,6 @@ class Search extends React.Component {
     );
   }
 }
-
-class DisplayEach extends React.Component {
-  render() {
-    return (
-      <ol className="books-grid">
-        {this.props.allbooks.map(book => (
-          <li key={book.name}>
-            <div className="book">
-              <div className="book-top">
-                <div className="book-cover" style={{ width: 128, height: '100%', backgroundImage: `url(${book.cover})` }}></div>
-              <Categorize updateStatus={this.props.updateStatus} />
-              </div>
-              <div className="book-title">{book.title}</div>
-              <div className="book-authors">{book.author}</div>
-            </div>
-          </li>
-        ))}
-      </ol>
-    )
-  }
-}
-
 
 class BooksApp extends React.Component {
   state = {
