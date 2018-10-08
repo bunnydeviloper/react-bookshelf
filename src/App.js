@@ -57,7 +57,6 @@ class BooksApp extends React.Component {
             </div>
           </div>
         )}/>
-        {/* {this.state.showSearchPage ? ( <Search /> ) : ( <DisplayAll /> )} */}
         {/* {this.state.showAddPage && <AddBook />} */}
         <Route path="/search" component={Search} />
       </div>
