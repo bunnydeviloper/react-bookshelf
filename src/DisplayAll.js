@@ -128,4 +128,4 @@ class DisplayAll extends React.Component {
   }
 };
 
-export default DisplayAll;
+export { DisplayAll, DisplayEach };

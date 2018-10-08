@@ -2,7 +2,7 @@ import React from 'react';
 // import * as BooksAPI from './BooksAPI';
 import './App.css';
 import AddBook from './CreateBook';
-import DisplayAll from './DisplayAll';
+import { DisplayAll, DisplayEach } from './DisplayAll';
 import { Link, Route } from 'react-router-dom';
 
 class Search extends React.Component {
@@ -26,6 +26,7 @@ class Search extends React.Component {
             <div className="search-books-results">
               <ol className="books-grid"></ol>
             </div>
+            <DisplayEach allbooks={this.state.allbooks} />
           </div>
     );
   }
