@@ -3,14 +3,15 @@ import React from 'react'
 import './App.css'
 
 // stateless functional compoment
-function Categorize () {
+function Categorize(updateStatus) {
+  console.log(updateStatus);
   return (
     <div className="book-shelf-changer">
       <select>
         <option value="move" disabled>Move to...</option>
-        <option value="currentlyReading">Currently Reading</option>
-        <option value="wantToRead">Want to Read</option>
-        <option value="read">Read</option>
+        <option onClick={() => updateStatus("Currently Reading")} value="currentlyReading">Currently Reading</option>
+        <option onClick={() => updateStatus("Want To Read")} value="wantToRead">Want to Read</option>
+        <option onClick={alert('hi')} value="read">Read</option>
         <option value="none">None</option>
       </select>
     </div>
@@ -52,7 +53,7 @@ class DisplayEach extends React.Component {
             <div className="book">
               <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: '100%', backgroundImage: `url(${book.cover})` }}></div>
-                <Categorize />
+              <Categorize updateStatus={this.props.updateStatus} />
               </div>
               <div className="book-title">{book.title}</div>
               <div className="book-authors">{book.author}</div>
@@ -104,6 +105,15 @@ class DisplayBooks extends React.Component {
       },
     ]
   };
+
+  updateStatus = (status) => {
+    // console.log(status);
+    this.setState((prevState) => {
+      allbooks: prevState.allbooks.something
+
+    });
+  };
+
   render() {
     return (
       <div className="list-books">
@@ -115,19 +125,28 @@ class DisplayBooks extends React.Component {
             <div className="bookshelf">
               <h2 className="bookshelf-title">Currently Reading</h2>
               <div className="bookshelf-books">
-                <DisplayEach allbooks={this.state.allbooks.filter(b => b.status === "Currently Reading")} />
+                <DisplayEach
+                  allbooks={this.state.allbooks.filter(b => b.status === "Currently Reading")}
+                  updateStatus={this.updateStatus}
+                />
               </div>
             </div>
             <div className="bookshelf">
               <h2 className="bookshelf-title">Want to Read</h2>
               <div className="bookshelf-books">
-                <DisplayEach allbooks={this.state.allbooks.filter(b => b.status === "Want To Read")} />
+                <DisplayEach
+                  allbooks={this.state.allbooks.filter(b => b.status === "Want To Read")}
+                  updateStatus={this.updateStatus}
+                />
               </div>
             </div>
             <div className="bookshelf">
               <h2 className="bookshelf-title">Read</h2>
               <div className="bookshelf-books">
-                <DisplayEach allbooks={this.state.allbooks.filter(b => b.status === "Read")} />
+                <DisplayEach
+                  allbooks={this.state.allbooks.filter(b => b.status === "Read")}
+                  updateStatus={this.updateStatus}
+                />
               </div>
             </div>
           </div>
