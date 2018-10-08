@@ -82,10 +82,7 @@ class DisplayAll extends React.Component {
   };
 
   updateStatus = (status) => {
-    // console.log(status);
     this.setState((prevState) => {
-      allbooks: prevState.allbooks.something
-
     });
   };
 
