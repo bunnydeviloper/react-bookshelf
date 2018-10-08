@@ -1,5 +1,5 @@
 
-class DisplayBooks extends React.Component {
+class DisplayAll extends React.Component {
   state = {
     allbooks: [
       { title: "To Kill a Mockingbird",
