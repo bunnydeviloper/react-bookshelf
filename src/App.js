@@ -5,10 +5,6 @@ import AddBook from './CreateBook';
 import { DisplayAll, DisplayEach } from './DisplayAll';
 import { Link, Route } from 'react-router-dom';
 
-// console.log(BooksAPI.getAll());
-BooksAPI.getAll();
-
-
 class Search extends React.Component {
   render() {
     return (
