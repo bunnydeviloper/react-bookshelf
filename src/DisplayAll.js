@@ -22,23 +22,26 @@ function Categorize() {
 class DisplayEach extends React.Component {
   render() {
     return (
-      <div className="bookshelf-books">
-        <ol className="books-grid">
-          {this.props.books.map(book => (
-            <li key={book.title}>
-              <div className="book">
-                <div className="book-top">
-                  <div className="book-cover"
-                    style={{ width: 128, height: '100%', backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}>
+      <div className="bookshelf">
+        <h2 className="bookshelf-title">{this.props.status}</h2>
+        <div className="bookshelf-books">
+          <ol className="books-grid">
+            {this.props.books.map(book => (
+              <li key={book.title}>
+                <div className="book">
+                  <div className="book-top">
+                    <div className="book-cover"
+                      style={{ width: 128, height: '100%', backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}>
+                    </div>
                   </div>
                   <Categorize updateStatus={this.props.updateStatus} />
+                  <div className="book-title">{book.title}</div>
+                  <div className="book-authors">{book.author}</div>
                 </div>
-                <div className="book-title">{book.title}</div>
-                <div className="book-authors">{book.author}</div>
-              </div>
-            </li>
-          ))}
-        </ol>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     )
   }
@@ -64,24 +67,18 @@ class DisplayAll extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Currently Reading</h2>
-              <DisplayEach
-                books={books.filter(b => b.shelf === "currentlyReading")}
-              />
-            </div>
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Want to Read</h2>
-              <DisplayEach
-                books={books.filter(b => b.shelf === "wantToRead")}
-              />
-            </div>
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Read</h2>
-              <DisplayEach
-                books={books.filter(b => b.shelf === "read")}
-              />
-            </div>
+            <DisplayEach
+              books={books.filter(b => b.shelf === "currentlyReading")}
+              status={"Currently Reading"}
+            />
+            <DisplayEach
+              books={books.filter(b => b.shelf === "wantToRead")}
+              status={"Want To Read"}
+            />
+            <DisplayEach
+              books={books.filter(b => b.shelf === "read")}
+              status={"Read"}
+            />
           </div>
         </div>
       </div>
