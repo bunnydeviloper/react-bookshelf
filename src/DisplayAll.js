@@ -28,7 +28,9 @@ class DisplayEach extends React.Component {
             <li key={book.title}>
               <div className="book">
                 <div className="book-top">
-                  <div className="book-cover" style={{ width: 128, height: '100%', backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
+                  <div className="book-cover"
+                    style={{ width: 128, height: '100%', backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}>
+                  </div>
                   <Categorize updateStatus={this.props.updateStatus} />
                 </div>
                 <div className="book-title">{book.title}</div>
@@ -51,11 +53,6 @@ class DisplayAll extends React.Component {
     query: ''
   };
 
-  updateStatus = (status) => {
-    this.setState((prevState) => {
-    });
-  };
-
   render() {
     const { books } = this.props;
     const { query } = this.state;
@@ -71,21 +68,18 @@ class DisplayAll extends React.Component {
               <h2 className="bookshelf-title">Currently Reading</h2>
               <DisplayEach
                 books={books.filter(b => b.shelf === "currentlyReading")}
-                updateStatus={this.updateStatus}
               />
             </div>
             <div className="bookshelf">
               <h2 className="bookshelf-title">Want to Read</h2>
               <DisplayEach
                 books={books.filter(b => b.shelf === "wantToRead")}
-                updateStatus={this.updateStatus}
               />
             </div>
             <div className="bookshelf">
               <h2 className="bookshelf-title">Read</h2>
               <DisplayEach
                 books={books.filter(b => b.shelf === "read")}
-                updateStatus={this.updateStatus}
               />
             </div>
           </div>
