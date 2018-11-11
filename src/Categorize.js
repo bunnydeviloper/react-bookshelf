@@ -1,31 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 // with help from @drunkenismet github repo
 // https://github.com/drunkenismet
 
-const Categorize = ({ book, shelf, move }) => {
-  // const options = ["currentlyReading", "wantToRead", "read", "none"];
-  const options = ["Currently Reading", "Want To Read", "Read", "None"];
-  const theShelf = shelf !== "search-shelf" ? shelf : "none";
+class Categorize extends Component {
 
-  return (
-    <div className="book-shelf-changer">
-      <select
-        defaultValue={ theShelf }
-        onChange={(event) => {
-          const target = event.target.value;
-          move(book, theShelf, target);
-        }}>
+  render() {
+    const { book, updateShelf } = this.props;
+    const options = [
+      {"currentlyReading": "Currently Reading"},
+      {"wantToRead": "Want To Read"},
+      {"read": "Read"},
+      {"none": "None"}
+    ];
 
-        <option value="disabled" disabled>Move to...</option>
+    return (
+      <div className="book-shelf-changer">
+        <select
+          defaultValue={book.shelf}
+          onChange={(event) => {
+            updateShelf(book, event.target.value);
+          }}>
+
+          <option value="disabled" disabled>Move to...</option>
         {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
+          <option key={Object.keys(option)[0]} value={Object.keys(option)[0]}>
+            {Object.values(option)[0]}
           </option>
         ))}
-    </select>
-  </div>
-  );
+      </select>
+    </div>
+    );
+  }
 }
 
 export default Categorize;

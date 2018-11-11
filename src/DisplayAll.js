@@ -13,7 +13,7 @@ class DisplayEach extends React.Component {
               <li key={book.title}>
                 <div className="book">
                   <div className="book-top">
-                    <Categorize updateStatus={this.props.updateStatus} />
+                    <Categorize book={book} updateShelf={this.props.updateShelf} />
                     <div className="book-cover"
                       style={{ width: 128, height: '100%', backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}>
                     </div>
@@ -33,15 +33,26 @@ class DisplayEach extends React.Component {
 class DisplayAll extends React.Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
-    // TODO: add other method here
+    updateShelf: PropTypes.func.isRequired,
   }
+
   state = {
     query: ''
   };
 
+  updateQuery = (query) => {
+    this.setState({ query: query.trim() })
+  }
+
+  clearQuery = () => {
+    this.setState({ query: '' })
+  }
+
   render() {
-    const { books } = this.props;
+    const { books, updateShelf } = this.props;
     const { query } = this.state;
+
+    console.log('this is the books', books);
 
     return (
       <div className="list-books">
@@ -53,14 +64,17 @@ class DisplayAll extends React.Component {
             <DisplayEach
               books={books.filter(b => b.shelf === "currentlyReading")}
               status={"Currently Reading"}
+              updateShelf={updateShelf}
             />
             <DisplayEach
               books={books.filter(b => b.shelf === "wantToRead")}
               status={"Want To Read"}
+              updateShelf={updateShelf}
             />
             <DisplayEach
               books={books.filter(b => b.shelf === "read")}
               status={"Read"}
+              updateShelf={updateShelf}
             />
           </div>
         </div>
