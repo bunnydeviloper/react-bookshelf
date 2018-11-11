@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // stateless functional compoment
 function Categorize() {
@@ -40,8 +41,11 @@ class DisplayEach extends React.Component {
 }
 
 class DisplayAll extends React.Component {
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    // TODO: add other method here
+  }
   state = {
-    showSearchPage: false,
     allbooks: [
       { title: "To Kill a Mockingbird",
         author: "Harper Lee",
