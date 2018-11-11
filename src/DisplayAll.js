@@ -6,10 +6,9 @@ function Categorize() {
     <div className="book-shelf-changer">
       <select>
         <option value="move" disabled>Move to...</option>
-        <option value="currentlyReading">Currently Reading</option>
+        <option value="currentlyReading" selected>Currently Reading</option>
         <option value="wantToRead">Want To Read</option>
         <option value="read">Read</option>
-        <option value="none">None</option>
       {/* <option onClick={() => updateStatus("Currently Reading")} value="currentlyReading">Currently Reading</option> */}
       {/* <option onClick={() => updateStatus("Want To Read")} value="wantToRead">Want to Read</option> */}
       {/* <option onClick={alert('hi')} value="read">Read</option> */}
