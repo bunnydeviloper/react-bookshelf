@@ -46,6 +46,9 @@ class DisplayAll extends React.Component {
     // TODO: add other method here
   }
   state = {
+    query: ''
+
+    /*
     allbooks: [
       { title: "To Kill a Mockingbird",
         author: "Harper Lee",
@@ -83,6 +86,7 @@ class DisplayAll extends React.Component {
         status: "Read"
       },
     ]
+    */
   };
 
   updateStatus = (status) => {
@@ -91,6 +95,9 @@ class DisplayAll extends React.Component {
   };
 
   render() {
+    const { books } = this.props;
+    const { query } = this.state;
+
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -102,7 +109,7 @@ class DisplayAll extends React.Component {
               <h2 className="bookshelf-title">Currently Reading</h2>
               <div className="bookshelf-books">
                 <DisplayEach
-                  allbooks={this.state.allbooks.filter(b => b.status === "Currently Reading")}
+                  allbooks={books.filter(b => b.shelf === "currentlyReading")}
                   updateStatus={this.updateStatus}
                 />
               </div>
@@ -111,7 +118,7 @@ class DisplayAll extends React.Component {
               <h2 className="bookshelf-title">Want to Read</h2>
               <div className="bookshelf-books">
                 <DisplayEach
-                  allbooks={this.state.allbooks.filter(b => b.status === "Want To Read")}
+                  allbooks={books.filter(b => b.shelf === "wantToRead")}
                   updateStatus={this.updateStatus}
                 />
               </div>
@@ -120,7 +127,7 @@ class DisplayAll extends React.Component {
               <h2 className="bookshelf-title">Read</h2>
               <div className="bookshelf-books">
                 <DisplayEach
-                  allbooks={this.state.allbooks.filter(b => b.status === "Read")}
+                  allbooks={books.filter(b => b.shelf === "read")}
                   updateStatus={this.updateStatus}
                 />
               </div>
