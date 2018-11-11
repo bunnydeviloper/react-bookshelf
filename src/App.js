@@ -26,7 +26,6 @@ class Search extends React.Component {
             <div className="search-books-results">
               <ol className="books-grid"></ol>
             </div>
-            {/* <DisplayEach allbooks={this.state.allbooks} /> */}
           </div>
     );
   }
