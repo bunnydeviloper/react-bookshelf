@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// stateless functional compoment
 function Categorize() {
   return (
     <div className="book-shelf-changer">
@@ -30,11 +29,11 @@ class DisplayEach extends React.Component {
               <li key={book.title}>
                 <div className="book">
                   <div className="book-top">
+                    <Categorize updateStatus={this.props.updateStatus} />
                     <div className="book-cover"
                       style={{ width: 128, height: '100%', backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}>
                     </div>
                   </div>
-                  <Categorize updateStatus={this.props.updateStatus} />
                   <div className="book-title">{book.title}</div>
                   <div className="book-authors">{book.author}</div>
                 </div>
