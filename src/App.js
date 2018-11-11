@@ -1,8 +1,7 @@
 import React from 'react';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
-import AddBook from './CreateBook';
-import { DisplayAll, DisplayEach } from './DisplayAll';
+import { DisplayAll } from './DisplayAll';
 import { Link, Route } from 'react-router-dom';
 import Search from './Search';
 

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import escapeRegExp from 'escape-string-regexp';
 import sortBy from 'sort-by';
-import { DisplayAll, DisplayEach } from './DisplayAll';
+import { DisplayEach } from './DisplayAll';
+import AddBook from './CreateBook';
 
 class Search extends Component {
   state = {
@@ -13,9 +14,11 @@ class Search extends Component {
     this.setState({ query: query.trim() })
   }
 
+  /*
   clearQuery = () => {
     this.setState({ query: '' })
   }
+  */
 
   render() {
     const { books } = this.props;
@@ -49,16 +52,16 @@ class Search extends Component {
                   value={query} onChange={(event) => this.updateQuery(event.target.value)}
                 />
 
-              </div>
             </div>
-            <div className="search-books-results">
-              <ol className="books-grid"></ol>
-            </div>
-
-            {showingBooks.length > 0 && (
-              <DisplayEach books={showingBooks} />
-            )}
           </div>
+          <div className="search-books-results">
+            <ol className="books-grid"></ol>
+          </div>
+
+          {showingBooks.length > 0 && (
+            <DisplayEach books={showingBooks} />
+          )}
+        </div>
     );
   }
 }
