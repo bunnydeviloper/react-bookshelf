@@ -1,8 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import escapeRegExp from 'escape-string-regexp';
+import sortBy from 'sort-by';
 
 class Search extends React.Component {
+  state = {
+    query: ''
+  };
+
+  updateQuery = (query) => {
+    this.setState({ query: query.trim() })
+  }
+
+  clearQuery = () => {
+    this.setState({ query: '' })
+  }
+
   render() {
+    const { query } = this.state;
+
+    let showingBooks;
+    if (query) {
+      const match = new RegExp(escapeRegExp(query), 'i');
+    }
+
     return (
       <div className="search-books">
         <div className="search-books-bar">

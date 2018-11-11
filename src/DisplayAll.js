@@ -36,23 +36,8 @@ class DisplayAll extends React.Component {
     updateShelf: PropTypes.func.isRequired,
   }
 
-  state = {
-    query: ''
-  };
-
-  updateQuery = (query) => {
-    this.setState({ query: query.trim() })
-  }
-
-  clearQuery = () => {
-    this.setState({ query: '' })
-  }
-
   render() {
     const { books, updateShelf } = this.props;
-    const { query } = this.state;
-
-    console.log('this is the books', books);
 
     return (
       <div className="list-books">
