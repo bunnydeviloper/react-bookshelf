@@ -61,6 +61,7 @@ class Search extends Component {
           {showingBooks.length > 0 && (
             <DisplayEach books={showingBooks} />
           )}
+          <AddBook />
         </div>
     );
   }
